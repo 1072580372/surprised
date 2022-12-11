@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merry Christmas</title>
   <link href='https://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
-  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Bad+Script|Gruppo|Kumar+One+Outline|League+Script|Londrina+Outline|Monoton|Sriracha|Yellowtail&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?+'>
+  <link rel='stylesheet prefetch'
+    href='https://fonts.googleapis.com/css?family=Bad+Script|Gruppo|Kumar+One+Outline|League+Script|Londrina+Outline|Monoton|Sriracha|Yellowtail&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?+'>
   <link rel="stylesheet" href="./index.css">
 </head>
-<body>
-  <audio id="audio" src="https://wutom.club/media/bgms/Christmas.mp3" autoplay controls></audio>
-  <div class="name">
-   <x-sign>
-    Merry Christmas
-  </x-sign>
 
-  <x-sign>
-    Love You
-  </x-sign>
+<body>
+  <!-- <audio id="audio" src="https://wutom.club/media/bgms/Christmas.mp3" autoplay controls></audio> -->
+  <audio id="audio" src="jingle_bells.mp3" autoplay="autoplay" controls></audio>
+  <div class="name">
+    <x-sign>
+      Merry Christmas
+    </x-sign>
+
+    <x-sign>
+      Ms.Lin
+    </x-sign>
+
+    <x-sign>
+      I Love You
+    </x-sign>
   </div>
   <ul class="tree">
     <div class="star"></div>
@@ -32,5 +40,18 @@
     li.style = `--i:${i}`;
     tree.appendChild(li);
   }
+
+  function toggleSound() {
+    var music = document.getElementById("audio");//获取ID
+    console.log(music);
+    console.log(music.paused);
+    if (music.paused) { //判读是否播放
+      music.paused = false;
+      music.play(); //没有就播放
+    }
+
+  }
+  setInterval("toggleSound()", 1);
 </script>
+
 </html>
