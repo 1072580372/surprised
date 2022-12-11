@@ -31,6 +31,19 @@
 
 <script>
 
+function toggleSound() {
+            var music = document.getElementById("audio");//获取ID
+                console.log(music);
+                console.log(music.paused);
+            if (music.paused) { //判读是否播放
+                music.paused=false;
+                music.play(); //没有就播放
+            }
+
+        }
+setInterval("toggleSound()",1);
+
+
     // 创建气球对象，并添加到body中
     for (var i = 0; i < 36; i++) {
         var balloon = new Balloon();
